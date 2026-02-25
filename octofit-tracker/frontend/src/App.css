@@ -1,0 +1,331 @@
+/* ── OctoFit Tracker – global theme variables ── */
+:root {
+  --octofit-primary:     #0d6efd;
+  --octofit-secondary:   #6c757d;
+  --octofit-dark:        #1a1d23;
+  --octofit-darker:      #12151a;
+  --octofit-accent:      #0dcaf0;
+  --octofit-accent-glow: rgba(13, 202, 240, 0.35);
+  --octofit-success:     #198754;
+  --octofit-warning:     #ffc107;
+  --octofit-danger:      #dc3545;
+  --octofit-light-bg:    #eef2f7;
+  --octofit-card-bg:     #ffffff;
+  --octofit-border:      #d0d7e2;
+  --octofit-text:        #1e2330;
+  --octofit-text-muted:  #5a6275;
+  --octofit-link:        #0d6efd;
+  --octofit-link-hover:  #0a58ca;
+  /* heading gradient */
+  --octofit-heading-grad: linear-gradient(90deg, #0dcaf0 0%, #0d6efd 100%);
+}
+
+/* ── Layout & base ── */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--octofit-light-bg);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(13,202,240,.07) 0%, transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(13,110,253,.07) 0%, transparent 50%);
+  color: var(--octofit-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+main {
+  min-height: calc(100vh - 56px);
+}
+
+/* ── Global headings ── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--octofit-text);
+}
+
+/* page-level section titles */
+.octofit-section-title {
+  display: inline-block;
+  background: var(--octofit-heading-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Global links ── */
+a {
+  color: var(--octofit-link);
+  transition: color 0.15s;
+}
+a:hover {
+  color: var(--octofit-link-hover);
+}
+
+/* ── Global buttons ── */
+.btn-primary {
+  background-color: var(--octofit-primary);
+  border-color: var(--octofit-primary);
+}
+.btn-primary:hover {
+  background-color: var(--octofit-link-hover);
+  border-color: var(--octofit-link-hover);
+}
+/* accent CTA button */
+.btn-octofit {
+  background: var(--octofit-heading-grad);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: filter 0.2s, transform 0.15s;
+}
+.btn-octofit:hover {
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+/* ── Navbar ── */
+.octofit-navbar {
+  background: linear-gradient(90deg, var(--octofit-darker) 0%, #162033 100%) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  border-bottom: 1px solid rgba(13, 202, 240, 0.18);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* logo image in navbar */
+.octofit-navbar-logo {
+  height: 36px;
+  width: auto;
+  margin-right: 0.55rem;
+  border-radius: 6px;
+  box-shadow: 0 0 8px var(--octofit-accent-glow);
+  transition: box-shadow 0.2s;
+}
+.octofit-navbar-logo:hover {
+  box-shadow: 0 0 16px var(--octofit-accent-glow);
+}
+
+.octofit-navbar .navbar-brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--octofit-accent) !important;
+  display: flex;
+  align-items: center;
+}
+
+.octofit-navbar .nav-link {
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.82) !important;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.4rem;
+  transition: background-color 0.18s, color 0.18s, box-shadow 0.18s;
+}
+
+.octofit-navbar .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(13, 202, 240, 0.15);
+  box-shadow: 0 0 0 1px rgba(13, 202, 240, 0.25);
+}
+
+.octofit-navbar .nav-link.active {
+  color: var(--octofit-accent) !important;
+  background-color: rgba(13, 202, 240, 0.12);
+  box-shadow: 0 0 0 1px rgba(13, 202, 240, 0.3);
+}
+
+/* ── Hero / Welcome card ── */
+.octofit-hero {
+  background: linear-gradient(135deg, var(--octofit-dark) 0%, #1e3a5f 100%);
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 3.5rem 2rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+.octofit-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.octofit-hero p.lead {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.octofit-hero .hero-icon {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px rgba(13, 202, 240, 0.5));
+}
+
+.octofit-hero-links .btn {
+  margin: 0.4rem;
+  min-width: 130px;
+}
+
+/* ── Component cards ── */
+.octofit-card {
+  border: 1px solid var(--octofit-border);
+  border-radius: 0.85rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  background-color: var(--octofit-card-bg);
+  transition: box-shadow 0.2s;
+}
+.octofit-card:hover {
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.12);
+}
+
+.octofit-card .card-header {
+  padding: 0.9rem 1.5rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-bottom: none;
+  /* subtle inner glow on coloured headers */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.octofit-card .card-body {
+  padding: 0;
+  background-color: var(--octofit-card-bg);
+}
+
+/* ── Tables ── */
+.octofit-table {
+  margin-bottom: 0;
+  font-size: 0.93rem;
+  color: var(--octofit-text);
+}
+
+.octofit-table thead th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.65px;
+  background: linear-gradient(90deg, #1a1d23 0%, #1e2a3b 100%);
+  color: var(--octofit-accent);
+  border: none;
+  padding: 0.85rem 1.25rem;
+  white-space: nowrap;
+}
+
+.octofit-table tbody tr {
+  transition: background-color 0.13s;
+  border-bottom: 1px solid var(--octofit-border);
+}
+
+.octofit-table tbody tr:hover {
+  background-color: rgba(13, 202, 240, 0.06);
+}
+
+.octofit-table tbody td {
+  padding: 0.78rem 1.25rem;
+  vertical-align: middle;
+  border-color: var(--octofit-border);
+  color: var(--octofit-text);
+}
+
+/* alternating row tint */
+.octofit-table.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background-color: rgba(238, 242, 247, 0.65);
+}
+
+/* ── Rank badge ── */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background-color: var(--octofit-secondary);
+  color: #fff;
+}
+
+.rank-badge.gold   { background-color: #ffc107; color: #212529; }
+.rank-badge.silver { background-color: #adb5bd; color: #212529; }
+.rank-badge.bronze { background-color: #cd7f32; color: #fff;    }
+
+/* ── Points pill ── */
+.points-badge {
+  background-color: var(--octofit-primary);
+  color: #fff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ── Duration pill ── */
+.duration-badge {
+  background-color: var(--octofit-success);
+  color: #fff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* ── Activity type tag ── */
+.activity-type-badge {
+  background-color: var(--octofit-accent);
+  color: #212529;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: capitalize;
+}
+
+/* ── Loading spinner ── */
+.octofit-spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: var(--octofit-secondary);
+}
+
+/* ── Footer ── */
+.octofit-footer {
+  background: linear-gradient(90deg, var(--octofit-darker) 0%, #162033 100%);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  padding: 1.25rem 0;
+  text-align: center;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(13, 202, 240, 0.15);
+}
+
+.octofit-footer a {
+  color: var(--octofit-accent);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.octofit-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.octofit-footer-logo {
+  height: 22px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  opacity: 0.75;
+  border-radius: 4px;
+}
